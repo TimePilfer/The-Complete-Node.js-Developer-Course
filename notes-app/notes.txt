@@ -1,1 +1,2 @@
-My name is James
+My name is JamesThis is the appended sentence
+This is the appended sentence
