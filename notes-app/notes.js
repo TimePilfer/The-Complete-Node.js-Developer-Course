@@ -42,6 +42,19 @@ const removeNote = (title) => {
     
 }
 
+const listNotes = () => {
+    const notes = loadNotes()
+
+    if (notes.length === 0) {
+        console.log(chalk.bgRed('No notes found!'))
+    }
+    else {
+        console.log(chalk.bgRedBright("Your notes:"))
+        notes.forEach(note => console.log(chalk.bgYellow.black('Title: ' + note.title)))
+    }
+
+}
+
 const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync('notes.json')
@@ -62,5 +75,6 @@ const saveNotes = (notes) => {
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }

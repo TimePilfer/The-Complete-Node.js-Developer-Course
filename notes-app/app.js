@@ -47,18 +47,18 @@ yargs.command(
     }
 )
 
-//Create add command
+//Create list command
 yargs.command(
     {
         command: 'list',
         describe: 'List all the notes',
         handler() {
-            console.log('Listing all the notes!')
+            notes.listNotes()
         }
     }
 )
 
-//Create a remove command
+//Create a read command
 yargs.command(
     {
         command: 'read',
