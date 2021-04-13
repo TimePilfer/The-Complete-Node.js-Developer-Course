@@ -1,11 +1,8 @@
-console.log('Starting')
+const request = require('request')
 
-setTimeout(() => {
-    console.log('2 second timer')
-}, 2000)
+const url = 'http://api.weatherstack.com/current?access_key=6d30da04ea13e13f993d52804cfd5266&query=Whitby%20On'
 
-setTimeout(() => {
-    console.log('0 second timer')
-}, 0)
-
-console.log('Ending')
+request({url: url}, (error, response) => {
+    const data = JSON.parse(response.body)
+    console.log(data.current)
+})
